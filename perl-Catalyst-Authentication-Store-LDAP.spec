@@ -1,18 +1,14 @@
+%define upstream_name    Catalyst-Authentication-Store-LDAP
+%define upstream_version 0.1005
 
-%define realname   Catalyst-Authentication-Store-LDAP
-%define version    0.1005
-%define release    %mkrel 1
-
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+Summary:    LDAP authentication storage backend
 License:    GPL or Artistic
 Group:      Development/Perl
-Summary:    LDAP authentication storage backend
-Source:     http://www.cpan.org/modules/by-module/Catalyst/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires: perl(Catalyst::Plugin::Authentication)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(Net::LDAP)
@@ -20,8 +16,8 @@ BuildRequires: perl(Net::LDAP::Server::Test)
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::MockObject)
 BuildRequires: perl(Test::More)
-
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 This plugin implements the the Catalyst::Authentication manpage v.10 API.
@@ -35,14 +31,14 @@ wide variation of LDAP directories and schemas from one system to another.
 It authenticates users in two steps:
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-make test
+#make test
 
 %install
 rm -rf %buildroot
@@ -55,6 +51,4 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %doc Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
-
+%{perl_vendorlib}/Catalyst
