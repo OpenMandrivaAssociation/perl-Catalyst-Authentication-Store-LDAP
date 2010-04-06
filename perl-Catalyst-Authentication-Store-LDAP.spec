@@ -1,5 +1,5 @@
 %define upstream_name    Catalyst-Authentication-Store-LDAP
-%define upstream_version 1.007
+%define upstream_version 1.008
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
