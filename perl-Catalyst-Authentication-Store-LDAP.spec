@@ -1,14 +1,14 @@
 %define upstream_name    Catalyst-Authentication-Store-LDAP
-%define upstream_version 1.012
+%define upstream_version 1.014
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 Summary:	LDAP authentication storage backend
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/Catalyst-Authentication-Store-LDAP-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Catalyst::Plugin::Authentication)
@@ -85,4 +85,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sun Jul 19 2009 Buchan Milne <bgmilne@mandriva.org> 0.1005-1mdv
 - initial mdv release, generated with cpan2dist
+
 

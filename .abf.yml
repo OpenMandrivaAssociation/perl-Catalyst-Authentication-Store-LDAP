@@ -1,2 +1,4 @@
+removed_sources:
+  Catalyst-Authentication-Store-LDAP-1.012.tar.gz: 3a440f7d827260cece62eee8aa6948e6f2abf83b
 sources:
-  "Catalyst-Authentication-Store-LDAP-1.012.tar.gz": 3a440f7d827260cece62eee8aa6948e6f2abf83b
+  Catalyst-Authentication-Store-LDAP-1.014.tar.gz: 68f70527d7fd05c55bf80a1f674b67a5028abb04
